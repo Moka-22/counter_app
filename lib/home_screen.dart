@@ -1,3 +1,4 @@
+import 'package:counter_app/utils/colors.dart';
 import 'package:counter_app/widget/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,6 +17,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: TextWidget(
+          text: 'Counter App',
+          fontSize: 30,
+        ),
+        centerTitle: true,
+        backgroundColor: kPrimaryColor,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -26,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 builder: (context, state) {
                   return TextWidget(
                     text: state.counterValue.toString(),
+                    fontSize: 100,
                   );
                 },
               ),
@@ -39,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: const TextWidget(
                       text: '+',
+                      fontSize: 55,
                     ),
                   ),
                   const SizedBox(width: 20),
@@ -48,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: const TextWidget(
                       text: '-',
+                      fontSize: 55,
                     ),
                   ),
                 ],
